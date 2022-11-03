@@ -99,9 +99,7 @@ public class UsuarioDAO implements IDAO{
 			ResultSet rs = ps.executeQuery();
 			if (rs != null) {
 				while (rs.next()) {
-					lista += "Placa:" + rs.getString(1) + "\n"; 
-					lista += "Cor:" + rs.getString(2) + "\n";
-					lista += "Descrição:" + rs.getString(3) + "\n\n";
+					lista += "Nome:" + rs.getString(1) + "\n";
 				}
 				return lista;
 			} else {
