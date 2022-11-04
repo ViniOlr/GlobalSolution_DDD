@@ -2,8 +2,8 @@ package Model;
 
 public class Pessoa {
 	
-	private String nome, email, dataNascimento;
-	private int RG, CPF, telefone;
+	private String nome, email, dataNascimento, telefone;
+	private int RG, CPF;
 	
 	
 	public String getNome() {
@@ -30,10 +30,10 @@ public class Pessoa {
 	public void setCPF(int cPF) {
 		CPF = cPF;
 	}
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}	
 	public String getDataNascimento() {

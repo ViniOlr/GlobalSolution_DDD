@@ -10,6 +10,10 @@ public class UsuarioDAO implements IDAO{
 	private Connection con;
 	private Usuario usuario;
 	
+	public UsuarioDAO(Connection con) {
+		setCon(con);
+	}
+	
 	public Connection getCon() {
 		return con;
 	}
@@ -29,15 +33,15 @@ public class UsuarioDAO implements IDAO{
 	@Override
 	public String inserir(Object obj) {
 		usuario = (Usuario) obj;
-		String sql = "INSERT INTO T_SE_USUARIO (NOME, EMAIL, RG, CPF, TELEFONE, DATA_NASCIMENTO, SETOR, LOGIN, SENHA, RM)"
-				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, SQ_SE_USUARIO_RM)";
+		String sql = "INSERT INTO T_SE_USUARIO (rm, nome, rg, cpf, telefone, email, data_nascimento, setor, login, senha)"
+				+ "VALUES (SQ_SE_USUARIO_RM.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, usuario.getNome());
-			ps.setString(2, usuario.getEmail());
-			ps.setInt(3, usuario.getRG());
-			ps.setInt(4, usuario.getCPF());
-			ps.setInt(5, usuario.getTelefone());
+			ps.setInt(2, usuario.getRG());
+			ps.setInt(3, usuario.getCPF());
+			ps.setString(4, usuario.getTelefone());
+			ps.setString(5, usuario.getEmail());
 			ps.setString(6, usuario.getDataNascimento());
 			ps.setString(7, usuario.getSetor());
 			ps.setString(8, usuario.getLogin());
@@ -59,7 +63,7 @@ public class UsuarioDAO implements IDAO{
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, usuario.getEmail());
-			ps.setInt(2, usuario.getTelefone());
+			ps.setString(2, usuario.getTelefone());
 			ps.setString(3, usuario.getSetor());
 			ps.setString(4, usuario.getSenha());
 			ps.setInt(5, usuario.getRM());
@@ -99,7 +103,16 @@ public class UsuarioDAO implements IDAO{
 			ResultSet rs = ps.executeQuery();
 			if (rs != null) {
 				while (rs.next()) {
-					lista += "Nome:" + rs.getString(1) + "\n";
+					lista += "RM: " + rs.getInt(1) + "\n";
+					lista += "Nome: " + rs.getString(2) + "\n";
+					lista += "RG: " + rs.getInt(3) + "\n";
+					lista += "CPF: " + rs.getInt(4) + "\n";
+					lista += "Telefone: " + rs.getString(5) + "\n";
+					lista += "Email: " + rs.getString(6) + "\n";
+					lista += "Data de Nascimento: " + rs.getString(7) + "\n";
+					lista += "Setor: " + rs.getString(8) + "\n";
+					lista += "Login: " + rs.getString(9) + "\n";
+					lista += "Senha: " + rs.getString(10) + "\n\n";					
 				}
 				return lista;
 			} else {
