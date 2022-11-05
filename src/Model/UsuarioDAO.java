@@ -38,8 +38,8 @@ public class UsuarioDAO implements IDAO{
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, usuario.getNome());
-			ps.setInt(2, usuario.getRG());
-			ps.setInt(3, usuario.getCPF());
+			ps.setString(2, usuario.getRG());
+			ps.setString(3, usuario.getCPF());
 			ps.setString(4, usuario.getTelefone());
 			ps.setString(5, usuario.getEmail());
 			ps.setString(6, usuario.getDataNascimento());
@@ -59,14 +59,14 @@ public class UsuarioDAO implements IDAO{
 	@Override
 	public String alterar(Object obj) {
 		usuario = (Usuario) obj;
-		String sql = "UPDATE T_SE_USUARIO SET EMAIL = ?, TELEFONE = ?, SETOR = ?, SENHA = ? WHERE RM = ?";
+		String sql = "UPDATE T_SE_USUARIO SET email = ?, telefone = ?, setor = ?, senha = ? WHERE cpf = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, usuario.getEmail());
 			ps.setString(2, usuario.getTelefone());
 			ps.setString(3, usuario.getSetor());
 			ps.setString(4, usuario.getSenha());
-			ps.setInt(5, usuario.getRM());
+			ps.setString(5, usuario.getCPF());
 			if (ps.executeUpdate() > 0) {
 				return "Alterado com sucesso";
 			} else {
@@ -80,10 +80,10 @@ public class UsuarioDAO implements IDAO{
 	@Override
 	public String excluir(Object obj) {
 		usuario = (Usuario) obj;
-		String sql = "DELETE FROM T_SE_USUARIO WHERE RM = ?";
+		String sql = "DELETE FROM T_SE_USUARIO WHERE cpf = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
-			ps.setInt(1, usuario.getRM());
+			ps.setString(1, usuario.getCPF());
 			if (ps.executeUpdate() > 0) {
 				return "Excluido com sucesso";
 			} else {
@@ -105,8 +105,8 @@ public class UsuarioDAO implements IDAO{
 				while (rs.next()) {
 					lista += "RM: " + rs.getInt(1) + "\n";
 					lista += "Nome: " + rs.getString(2) + "\n";
-					lista += "RG: " + rs.getInt(3) + "\n";
-					lista += "CPF: " + rs.getInt(4) + "\n";
+					lista += "RG: " + rs.getString(3) + "\n";
+					lista += "CPF: " + rs.getString(4) + "\n";
 					lista += "Telefone: " + rs.getString(5) + "\n";
 					lista += "Email: " + rs.getString(6) + "\n";
 					lista += "Data de Nascimento: " + rs.getString(7) + "\n";

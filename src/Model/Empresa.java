@@ -2,14 +2,14 @@ package Model;
 
 public class Empresa {
 	
-	private String nome, endereco, telefone;
-	private int cnpj, quantidadeFuncionarios;
+	private String nome, endereco, telefone, cnpj;
+	private int quantidadeFuncionarios;
 	
 	public Empresa() {
 		
 	}
 
-	public Empresa(String nome, String endereco, int cnpj, int quantidadeFuncionarios, String telefone) {
+	public Empresa(String nome, String endereco, String cnpj, int quantidadeFuncionarios, String telefone) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
@@ -30,10 +30,10 @@ public class Empresa {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	public int getCnpj() {
+	public String getCnpj() {
 		return cnpj;
 	}
-	public void setCnpj(int cnpj) {
+	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
 	public int getQuantidadeFuncionarios() {

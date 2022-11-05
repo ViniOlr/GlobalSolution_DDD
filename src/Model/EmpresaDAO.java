@@ -34,7 +34,7 @@ public class EmpresaDAO implements IDAO {
 				+ "VALUES (SQ_SE_EMPRESA.NEXTVAL, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
-			ps.setInt(1, empresa.getCnpj());
+			ps.setString(1, empresa.getCnpj());
 			ps.setString(2, empresa.getNome());
 			ps.setInt(3, empresa.getQuantidadeFuncionarios());
 			ps.setString(4, empresa.getEndereco());
@@ -58,7 +58,7 @@ public class EmpresaDAO implements IDAO {
 			ps.setInt(1, empresa.getQuantidadeFuncionarios());
 			ps.setString(2, empresa.getEndereco());
 			ps.setString(3, empresa.getTelefone());
-			ps.setInt(4, empresa.getCnpj());
+			ps.setString(4, empresa.getCnpj());
 			if (ps.executeUpdate() > 0) {
 				return "Alterado com sucesso";
 			} else {
@@ -75,7 +75,7 @@ public class EmpresaDAO implements IDAO {
 		String sql = "DELETE FROM T_SE_EMPRESA WHERE cnpj = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
-			ps.setInt(1, empresa.getCnpj());
+			ps.setString(1, empresa.getCnpj());
 			if (ps.executeUpdate() > 0) {
 				return "Deletado com sucesso";
 			} else {

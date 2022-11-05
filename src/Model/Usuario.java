@@ -12,7 +12,7 @@ public class Usuario extends Pessoa {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(String setor, String login, String senha, int rM, String nome) {
+	public Usuario(String setor, String login, String senha, int rM) {
 		super();
 		this.setor = setor;
 		this.login = login;

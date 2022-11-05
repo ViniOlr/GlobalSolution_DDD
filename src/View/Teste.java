@@ -1,86 +1,38 @@
 package View;
 
-import java.sql.*;
-
-import Model.Conexao;
-//import Model.Empresa;
-//import Model.EmpresaDAO;
-//import Model.Carro;
-//import Model.CarroDAO;
-//import Model.Motorista;
-//import Model.Usuario;
-//import Model.UsuarioDAO;
-//import Model.MotoristaDAO;
+//import Controller.MotoristaController;
+//import Controller.EmpresaController;
+//import Controller.CarroController;
+//import Controller.UsuarioController;
 
 public class Teste {
 
 	public static void main(String[] args) {
 		
-		Connection con = Conexao.abrirConexao();
-
-		/*Usuario usuario = new Usuario();
-		usuario.setNome("Vinicius de Oliveira");
-		usuario.setCPF(526764518);
-		usuario.setTelefone("(11) 96630-9946");
-		usuario.setDataNascimento("15-05-2003");
-		usuario.setEmail("vini@gmail.com");
-		usuario.setLogin("Vini");
-		usuario.setRG(575331641);
-		usuario.setSenha("1234");
-		usuario.setSetor("Administrativo");
-		usuario.setRM(1);
+		//CarroController carroCtrl = new CarroController();
+		//System.out.println(carroCtrl.insereCarro("Chevrollet", "Tracker", 2021, 11, "ABC1234"));
+		//System.out.println(carroCtrl.alteraCarro(17, "ABC1234"));
+		//System.out.println(carroCtrl.excluiCarro("ABC1234"));
+		//System.out.println(carroCtrl.listaCarro());
 		
-		UsuarioDAO udao = new UsuarioDAO(con);
-		//System.out.println(udao.inserir(usuario));
-		//System.out.println(udao.alterar(usuario));
-		//System.out.println(udao.excluir(usuario));
-		//System.out.println(udao.listarTodos());*/
+		//UsuarioController usuarioiCtrl = new UsuarioController();
+		//System.out.println(usuarioiCtrl.insereUsuario("Administrativo", "Vini", "1234", "Vinicius", "vini@gmail.com", "15-05-2003", "(11) 96630-9946", "123456", "52676451847"));
+		//System.out.println(usuarioiCtrl.alteraUsuario("vinioliveira@gmail.com", "(11) 91234-5678", "RH", "abc123", "52676451847"));
+		//System.out.println(usuarioiCtrl.excluiUsuario("52676451847"));
+		//System.out.println(usuarioiCtrl.listaUsuario());
 		
-		/*Motorista motorista = new Motorista();
-		motorista.setNome("Vinicius de Oleira");
-		motorista.setCPF(526764518);
-		motorista.setTelefone("(11) 96630-9946");
-		motorista.setDataNascimento("15-05-2003");
-		motorista.setEmail("vinioliveira@gmail.com");
-		motorista.setRG(575331641);
-		motorista.setNumeroHabilitacao(123456789);
-		motorista.setCategoriaHabilitacao("A");
-		motorista.setDataExpedicao("24-06-2022");
+		//EmpresaController empresaCtrl = new EmpresaController();
+		//System.out.println(empresaCtrl.insereEmpresa("Empresa de TI", "Avenida Paulista, 190", "1234", 20, "(11) 96630-9946"));
+		//System.out.println(empresaCtrl.alteraEmpresa("Rua Lira Cearense, 190", "1234567891234", 15, "(11) 96630-9946"));
+		//System.out.println(empresaCtrl.excluiEmpresa("1234567891234"));
+		//System.out.println(empresaCtrl.listaEmpresa());
 		
-		MotoristaDAO mdao = new MotoristaDAO(con);
-		//System.out.println(mdao.inserir(motorista));
-		//System.out.println(mdao.alterar(motorista));
-		//System.out.println(mdao.excluir(motorista));
-		//System.out.println(mdao.listarTodos());*/
+		//MotoristaController motoristaCtrl = new MotoristaController();
+		//System.out.println(motoristaCtrl.insereMotorista("AB", "1234", "03-06-2022", "Vinicius", "vini@gmail.com", "15-05-2003", "(11) 96630-9946", "123456", "52676451847"));
+		//System.out.println(motoristaCtrl.alteraMotorista("viniOliveira@gmail.com", "(11) 96630-9946", "52676451847"));
+		//System.out.println(motoristaCtrl.excluiMotorista("52676451847"));
+		//System.out.println(motoristaCtrl.listaMotorista());
 		
-		/*Carro carro = new Carro();
-		carro.setMarca("Renault");
-		carro.setModelo("Kwid");
-		carro.setAno(2020);
-		carro.setKmPorLitro(11);
-		carro.setPlaca("DGS1234");
-		
-		CarroDAO cdao = new CarroDAO(con);
-		System.out.println(cdao.inserir(carro));
-		//System.out.println(cdao.alterar(carro));
-		//System.out.println(cdao.excluir(carro));
-		//System.out.println(cdao.listarTodos());*/
-		
-		/*Empresa empresa = new Empresa();
-		empresa.setCnpj(456789);
-		empresa.setEndereco("Rua do Alfineiros 123");
-		empresa.setNome("Empresa de TI");
-		empresa.setQuantidadeFuncionarios(250);
-		empresa.setTelefone("(11) 99194-3486");
-		
-		EmpresaDAO edao = new EmpresaDAO(con);
-		//System.out.println(edao.inserir(empresa));
-		//System.out.println(edao.alterar(empresa));
-		//System.out.println(edao.excluir(empresa));
-		System.out.println(edao.listarTodos());*/
-		
-		Conexao.fecharConexao(con);
-
 	}
 
 }

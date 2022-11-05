@@ -3,15 +3,14 @@ package Model;
 
 public class Motorista extends Pessoa {
 	
-	private String categoriaHabilitacao, dataExpedicao;
-	private int numeroHabilitacao;
+	private String categoriaHabilitacao, dataExpedicao, numeroHabilitacao;
 	
 	public Motorista() {
 		super();
 		// TODO Auto-generated constructor stub
 	}	
 	
-	public Motorista(String categoriaHabilitacao, int numeroHabilitacao, String dataExpedicao) {
+	public Motorista(String categoriaHabilitacao, String numeroHabilitacao, String dataExpedicao) {
 		super();
 		this.categoriaHabilitacao = categoriaHabilitacao;
 		this.numeroHabilitacao = numeroHabilitacao;
@@ -24,10 +23,10 @@ public class Motorista extends Pessoa {
 	public void setCategoriaHabilitacao(String categoriaHabilitacao) {
 		this.categoriaHabilitacao = categoriaHabilitacao;
 	}
-	public int getNumeroHabilitacao() {
+	public String getNumeroHabilitacao() {
 		return numeroHabilitacao;
 	}
-	public void setNumeroHabilitacao(int numeroHabilitacao) {
+	public void setNumeroHabilitacao(String numeroHabilitacao) {
 		this.numeroHabilitacao = numeroHabilitacao;
 	}
 	public String getDataExpedicao() {

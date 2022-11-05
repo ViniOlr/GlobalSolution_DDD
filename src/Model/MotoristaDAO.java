@@ -35,12 +35,12 @@ public class MotoristaDAO implements IDAO {
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, motorista.getNome());
-			ps.setInt(2, motorista.getRG());
-			ps.setInt(3, motorista.getCPF());
+			ps.setString(2, motorista.getRG());
+			ps.setString(3, motorista.getCPF());
 			ps.setString(4, motorista.getTelefone());
 			ps.setString(5, motorista.getEmail());
 			ps.setString(6, motorista.getDataNascimento());
-			ps.setInt(7, motorista.getNumeroHabilitacao());
+			ps.setString(7, motorista.getNumeroHabilitacao());
 			ps.setString(8, motorista.getCategoriaHabilitacao());
 			ps.setString(9, motorista.getDataExpedicao());
 			if (ps.executeUpdate() > 0) {
@@ -61,7 +61,7 @@ public class MotoristaDAO implements IDAO {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, motorista.getTelefone());
 			ps.setString(2, motorista.getEmail());
-			ps.setInt(3, motorista.getCPF());
+			ps.setString(3, motorista.getCPF());
 			if (ps.executeUpdate() > 0) {
 				return "Alterado com sucesso";
 			} else {
@@ -78,7 +78,7 @@ public class MotoristaDAO implements IDAO {
 		String sql = "DELETE FROM T_SE_MOTORISTA WHERE cpf = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
-			ps.setInt(1, motorista.getCPF());
+			ps.setString(1, motorista.getCPF());
 			if (ps.executeUpdate() > 0) {
 				return "Deletado com sucesso";
 			} else {

@@ -2,7 +2,7 @@ CREATE TABLE t_se_usuario (
     rm              NUMBER(10) NOT NULL,
     nome            VARCHAR2(100) NOT NULL,
     rg              NUMBER(15) NOT NULL,
-    cpf             NUMBER(15) NOT NULL,
+    cpf             VARCHAR2(15) NOT NULL,
     telefone        VARCHAR2(20) NOT NULL,
     email           VARCHAR2(80) NOT NULL,
     data_nascimento DATE NOT NULL,
@@ -16,8 +16,8 @@ CREATE SEQUENCE SQ_SE_USUARIO_RM START WITH 1;
 CREATE TABLE t_se_motorista (
     id_motorista            NUMBER(8) NOT NULL,
     nome                    VARCHAR2(100) NOT NULL,
-    rg                      NUMBER(7) NOT NULL,
-    cpf                     NUMBER(11) NOT NULL,
+    rg                      VARCHAR2(7) NOT NULL,
+    cpf                     VARCHAR2(11) NOT NULL,
     telefone                VARCHAR2(20) NOT NULL,
     email                   VARCHAR2(80) NOT NULL,
     data_nascimento         DATE NOT NULL,
@@ -30,7 +30,7 @@ CREATE SEQUENCE SQ_SE_MOTORISTA START WITH 1;
 
 CREATE TABLE t_se_empresa (
     id_empresa       NUMBER(8) NOT NULL,
-    cnpj             NUMBER(16) NOT NULL,
+    cnpj             VARCHAR2(16) NOT NULL,
     nome             VARCHAR2(80) NOT NULL,
     qtd_funcionarios NUMBER(10) NOT NULL,
     endereco         VARCHAR2(80) NOT NULL,

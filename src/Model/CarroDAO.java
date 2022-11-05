@@ -53,14 +53,11 @@ public class CarroDAO implements IDAO {
 	@Override
 	public String alterar(Object obj) {
 		carro = (Carro) obj;
-		String sql = "UPDATE T_SE_CARRO SET marca = ?, modelo = ?, ano = ?, km_por_litro = ? WHERE placa = ?";
+		String sql = "UPDATE T_SE_CARRO SET km_por_litro = ? WHERE placa = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
-			ps.setString(1, carro.getMarca());
-			ps.setString(2, carro.getModelo());
-			ps.setInt(3, carro.getAno());
-			ps.setInt(4, carro.getKmPorLitro());
-			ps.setString(5, carro.getPlaca());
+			ps.setInt(1, carro.getKmPorLitro());
+			ps.setString(2, carro.getPlaca());
 			if (ps.executeUpdate() > 0) {
 				return "Alterado com sucesso";
 			} else {
