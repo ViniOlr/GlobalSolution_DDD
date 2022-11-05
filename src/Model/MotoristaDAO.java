@@ -30,8 +30,8 @@ public class MotoristaDAO implements IDAO {
 	@Override
 	public String inserir(Object obj) {
 		motorista = (Motorista) obj;
-		String sql = "INSERT INTO T_SE_MOTORISTA (id_motorista, nome, rg, cpf, telefone, email, data_nascimento, numero_habilitacao, categoria_habilitacao, data_expedicao)"
-				+ "VALUES (SQ_SE_MOTORISTA.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO MOTORISTA (id_motorista, nome, rg, cpf, telefone, email, data_nascimento, numero_habilitacao, categoria_habilitacao, data_expedicao)"
+				+ "VALUES (SQ_MOTORISTA.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, motorista.getNome());
@@ -56,7 +56,7 @@ public class MotoristaDAO implements IDAO {
 	@Override
 	public String alterar(Object obj) {
 		motorista = (Motorista) obj;
-		String sql = "UPDATE T_SE_MOTORISTA SET telefone = ?, email = ? WHERE cpf = ?";
+		String sql = "UPDATE MOTORISTA SET telefone = ?, email = ? WHERE cpf = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, motorista.getTelefone());
@@ -75,7 +75,7 @@ public class MotoristaDAO implements IDAO {
 	@Override
 	public String excluir(Object obj) {
 		motorista = (Motorista) obj;
-		String sql = "DELETE FROM T_SE_MOTORISTA WHERE cpf = ?";
+		String sql = "DELETE FROM MOTORISTA WHERE cpf = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, motorista.getCPF());
@@ -91,7 +91,7 @@ public class MotoristaDAO implements IDAO {
 	
 	@Override
 	public String listarTodos() {
-		String sql = "SELECT * FROM T_SE_MOTORISTA";
+		String sql = "SELECT * FROM MOTORISTA";
 		String lista = "Lista de motoristas:\n\n";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);

@@ -33,8 +33,8 @@ public class UsuarioDAO implements IDAO{
 	@Override
 	public String inserir(Object obj) {
 		usuario = (Usuario) obj;
-		String sql = "INSERT INTO T_SE_USUARIO (rm, nome, rg, cpf, telefone, email, data_nascimento, setor, login, senha)"
-				+ "VALUES (SQ_SE_USUARIO_RM.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO USUARIO (rm, nome, rg, cpf, telefone, email, data_nascimento, setor, login, senha)"
+				+ "VALUES (SQ_USUARIO_RM.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, usuario.getNome());
@@ -59,7 +59,7 @@ public class UsuarioDAO implements IDAO{
 	@Override
 	public String alterar(Object obj) {
 		usuario = (Usuario) obj;
-		String sql = "UPDATE T_SE_USUARIO SET email = ?, telefone = ?, setor = ?, senha = ? WHERE cpf = ?";
+		String sql = "UPDATE USUARIO SET email = ?, telefone = ?, setor = ?, senha = ? WHERE cpf = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, usuario.getEmail());
@@ -80,7 +80,7 @@ public class UsuarioDAO implements IDAO{
 	@Override
 	public String excluir(Object obj) {
 		usuario = (Usuario) obj;
-		String sql = "DELETE FROM T_SE_USUARIO WHERE cpf = ?";
+		String sql = "DELETE FROM USUARIO WHERE cpf = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, usuario.getCPF());
@@ -96,7 +96,7 @@ public class UsuarioDAO implements IDAO{
 	
 	@Override
 	public String listarTodos() {
-		String sql = "SELECT * FROM T_SE_USUARIO";
+		String sql = "SELECT * FROM USUARIO";
 		String lista = "Lista de usuários:\n\n";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);

@@ -1,4 +1,4 @@
-CREATE TABLE t_se_usuario (
+CREATE TABLE usuario (
     rm              NUMBER(10) NOT NULL,
     nome            VARCHAR2(100) NOT NULL,
     rg              NUMBER(15) NOT NULL,
@@ -11,9 +11,9 @@ CREATE TABLE t_se_usuario (
     senha           VARCHAR(30) NOT NULL
 );
 
-CREATE SEQUENCE SQ_SE_USUARIO_RM START WITH 1;
+CREATE SEQUENCE SQ_USUARIO_RM START WITH 1;
 
-CREATE TABLE t_se_motorista (
+CREATE TABLE motorista (
     id_motorista            NUMBER(8) NOT NULL,
     nome                    VARCHAR2(100) NOT NULL,
     rg                      VARCHAR2(7) NOT NULL,
@@ -26,9 +26,9 @@ CREATE TABLE t_se_motorista (
     data_expedicao          DATE NOT NULL
 );
 
-CREATE SEQUENCE SQ_SE_MOTORISTA START WITH 1;
+CREATE SEQUENCE SQ_MOTORISTA START WITH 1;
 
-CREATE TABLE t_se_empresa (
+CREATE TABLE empresa (
     id_empresa       NUMBER(8) NOT NULL,
     cnpj             VARCHAR2(16) NOT NULL,
     nome             VARCHAR2(80) NOT NULL,
@@ -37,9 +37,9 @@ CREATE TABLE t_se_empresa (
     telefone         VARCHAR2(20) NOT NULL
 );
 
-CREATE SEQUENCE SQ_SE_EMPRESA START WITH 1;
+CREATE SEQUENCE SQ_EMPRESA START WITH 1;
 
-CREATE TABLE t_se_carro (
+CREATE TABLE carro (
     id_carro        NUMBER(8) NOT NULL,
     marca           VARCHAR2(80) NOT NULL,
     modelo          VARCHAR2(80) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE t_se_carro (
     km_por_litro    NUMERIC(10) NOT NULL
 );
 
-CREATE SEQUENCE SQ_SE_CARRO START WITH 1;
+CREATE SEQUENCE SQ_CARRO START WITH 1;
 
 
 

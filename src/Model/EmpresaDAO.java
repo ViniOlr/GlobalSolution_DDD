@@ -30,8 +30,8 @@ public class EmpresaDAO implements IDAO {
 	@Override
 	public String inserir(Object obj) {
 		empresa = (Empresa) obj;
-		String sql = "INSERT INTO T_SE_EMPRESA (id_empresa, cnpj, nome, qtd_funcionarios, endereco, telefone)"
-				+ "VALUES (SQ_SE_EMPRESA.NEXTVAL, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO EMPRESA (id_empresa, cnpj, nome, qtd_funcionarios, endereco, telefone)"
+				+ "VALUES (SQ_EMPRESA.NEXTVAL, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, empresa.getCnpj());
@@ -52,7 +52,7 @@ public class EmpresaDAO implements IDAO {
 	@Override
 	public String alterar(Object obj) {
 		empresa = (Empresa) obj;
-		String sql = "UPDATE T_SE_EMPRESA SET qtd_funcionarios = ?, endereco = ?, telefone = ? WHERE cnpj = ?";
+		String sql = "UPDATE EMPRESA SET qtd_funcionarios = ?, endereco = ?, telefone = ? WHERE cnpj = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setInt(1, empresa.getQuantidadeFuncionarios());
@@ -72,7 +72,7 @@ public class EmpresaDAO implements IDAO {
 	@Override
 	public String excluir(Object obj) {
 		empresa = (Empresa) obj;
-		String sql = "DELETE FROM T_SE_EMPRESA WHERE cnpj = ?";
+		String sql = "DELETE FROM EMPRESA WHERE cnpj = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, empresa.getCnpj());
@@ -88,7 +88,7 @@ public class EmpresaDAO implements IDAO {
 	
 	@Override
 	public String listarTodos() {
-		String sql = "SELECT * FROM T_SE_EMPRESA";
+		String sql = "SELECT * FROM EMPRESA";
 		String lista = "Lista de empresas:\n\n";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);

@@ -31,8 +31,8 @@ public class CarroDAO implements IDAO {
 	@Override
 	public String inserir(Object obj) {
 		carro = (Carro) obj;
-		String sql = "INSERT INTO T_SE_CARRO (id_carro, marca, modelo, ano, placa, km_por_litro)"
-				+ "VALUES(SQ_SE_CARRO.NEXTVAL, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO CARRO (id_carro, marca, modelo, ano, placa, km_por_litro)"
+				+ "VALUES(SQ_CARRO.NEXTVAL, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, carro.getMarca());
@@ -53,7 +53,7 @@ public class CarroDAO implements IDAO {
 	@Override
 	public String alterar(Object obj) {
 		carro = (Carro) obj;
-		String sql = "UPDATE T_SE_CARRO SET km_por_litro = ? WHERE placa = ?";
+		String sql = "UPDATE CARRO SET km_por_litro = ? WHERE placa = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setInt(1, carro.getKmPorLitro());
@@ -71,7 +71,7 @@ public class CarroDAO implements IDAO {
 	@Override
 	public String excluir(Object obj) {
 		carro = (Carro) obj;
-		String sql = "DELETE FROM T_SE_CARRO WHERE placa = ?";
+		String sql = "DELETE FROM CARRO WHERE placa = ?";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
 			ps.setString(1, carro.getPlaca());
@@ -87,7 +87,7 @@ public class CarroDAO implements IDAO {
 	
 	@Override
 	public String listarTodos() {
-		String sql = "SELECT * FROM T_SE_CARRO";
+		String sql = "SELECT * FROM CARRO";
 		String lista = "Lista de carros:\n\n";
 		try {
 			PreparedStatement ps = getCon().prepareStatement(sql);
