@@ -1,9 +1,9 @@
 CREATE TABLE usuario (
     rm              NUMBER(10) NOT NULL,
     nome            VARCHAR2(100) NOT NULL,
-    rg              NUMBER(15) NOT NULL,
-    cpf             VARCHAR2(15) NOT NULL,
-    telefone        VARCHAR2(20) NOT NULL,
+    rg              VARCHAR2(25) NOT NULL,
+    cpf             VARCHAR2(25) NOT NULL,
+    telefone        VARCHAR2(25) NOT NULL,
     email           VARCHAR2(80) NOT NULL,
     data_nascimento DATE NOT NULL,
     setor           VARCHAR(40) NOT NULL,
